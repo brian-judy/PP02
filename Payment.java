@@ -9,14 +9,14 @@ public class Payment {
 	// this will check whether a card is valid
 	public static Boolean isValidCard(String number){
 
-		return true;
+		return validating.aValidNumber(number);
 
 	}// end of the isValidCard method
 
 	// creates a hash code for the credit card number to be stored in file
     public static String createHashCode(String number){
 
-		return null;
+		return hashing.getHashCode(number);
 
 	}// end of the createHashCode method
 
@@ -37,7 +37,18 @@ public class Payment {
 	// write data to file, the credit card number should be encrypted
 	// using one-way hash method in the Hashing class
     public static void writeToFile(){
-
+		File file = new File("customers.txt");
+		
+		PrintWriter write = new PrintWriter(file);
+		
+		String outCustomers = "";
+		
+		for(int i = 0; i < customers.length; i++)
+			outCustomers += customers.toString() + "\n";
+		
+		write.print(outCustomers);
+		
+		write.close();
     } // end of the writeToFile method
 
 
