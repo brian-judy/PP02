@@ -19,5 +19,50 @@ public class Customer {
 	}
 	
 	// add public setter/getter methods, and also the toString method
+		public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public CreditCard getCard() {
+		return card;
+	}
+
+	public void setCard(CreditCard card) {
+		this.card = card;
+	}
+	
+	// add public setter/getter methods, and also the toString method
+	@Override
+	public String toString() {
+		return fName + "\t" + lName + "\t" + String.valueOf(id) + "\t" + String.valueOf(amount) + "\t" + card;
+	}
 
 }
