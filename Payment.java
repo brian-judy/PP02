@@ -45,12 +45,116 @@ public class Payment {
 	// perform the business logic
 	public static void main(String[] args) {
 
+
 		hashing = new HashCode();
 		validating = new  Validation();
-               // input the number of customers and stor it into variable n
-               int n; // must hold the number of customers based on the user input
+               // input the number of customers and store it into variable n
+               int n = 0; // must hold the number of customers based on the user input
+       		
+       				// input number of customers
+       		while(true) {
+       		try {
+       			
+       			n = Integer.parseInt(JOptionPane.showInputDialog("Enter Number of Customers"));
+       			
+       			if (n <= 0)
+       				throw new Exception();
+       			
+       		    break;
+       		
+       		} catch (Exception ex){
+       				JOptionPane.showMessageDialog(null, "Catch: Invalid Input, Try Again!");
+       				
+       			}// end catch
+       		}// while
 		customers = new Customer[n];
+		
+		for (int i = 0; i < n + 6; i++) {
+			String fName;
+			String lName;
+			int id;
+			double amount;
+			CreditCard card;
+			long number;
+			String expDate;
+			
+	    //enter customer's first name
+		while(true) {
+		try {
+			fName = JOptionPane.showInputDialog("Enter customer's first name");
+		
+			if (fName.isEmpty())
+                 throw new Exception();
+			break;
+		
+		} catch (Exception ex){
+			JOptionPane.showMessageDialog(null, "Catch: Invalid Input, Try Again!");
+			//System.exit(0);
+		}// end catch
+		}// end while
+	
+				
+		// Enter customer's last name
+		while(true) {
+			try {lName = JOptionPane.showInputDialog("Enter customer's first name");
+						
+				if (lName.isEmpty())
+					throw new Exception();
+			break;
+			} catch (Exception ex){
+				JOptionPane.showMessageDialog(null, "Catch: Invalid Input, Try Again!");
+					
+				}// end catch
+				}//end while
+				
+	
+	
+		// Enter customer ID
+		while(true) {
+		id = Integer.parseInt(JOptionPane.showInputDialog("Enter ID"));
+		if (id < 0) 
+			JOptionPane.showMessageDialog(null, "Invalid Input");
+		//else if (id == 0)
+			//System.exit(0);
+		else
+			break;
+		}//while
+		
+				
+		//Enter purchase amount
+		while (true) {
+		try {
+		amount = Double.parseDouble(JOptionPane.showInputDialog("Enter purchase amount"));
+		if (amount < 0)
+			throw new Exception();
+		} catch (Exception ex){
+			JOptionPane.showMessageDialog(null, "Catch: Invalid Input");
 
-	}
+		}// end catch
+	   }// end while
+
+		while(true){
+		try{
+		number = Long.parseLong(JOptionPane.showInputDialog("Enter card number"));
+		if (number < 0)
+			throw new Exception();
+		} catch (Exception ex){
+			JOptionPane.showMessageDialog(null, "Catch: Invalid Input");
+
+		}// end catch
+	   }// end while
+		
+		while (true) {
+		try {
+		expDate = JOptionPane.showInputDialog("Enter card number");
+		if (expDate == "")
+			throw new Exception();
+		} catch (Exception ex){
+			JOptionPane.showMessageDialog(null, "Catch: Invalid Input");
+
+		}// end catch
+	   }// end while
+		
+	}// end for
 
 }
