@@ -100,15 +100,14 @@ private long numPrefix(long number, int k) {
 
 //Return the number of digits in this number parameter
 private static int numLength (long number) {
-	int numDigits = 0;
-	
-	//Convert long to string
-	String num = String.valueOf(number);
-	
-	//Set numDigits to length of string
-	numDigits = num.length();
-	
-	return numDigits;
+	  int numDigits = 0;
+
+	  while(number != 0) {
+		  number /= 10;
+		  numDigits++;
+	  }
+
+	  return numDigits;
 }
 
 	public static void main(String[] args) {
