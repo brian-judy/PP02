@@ -78,9 +78,8 @@ public class Payment {
 		String outCustomers = "";
 		
 		for(int i = 0; i < customers.length; i++) {
-			//String number = String.valueOf(customers[i].getCard().getNumber());
-			//customers[i].getCard().setNumber(Long.parseLong(createHashCode(number)));
-			outCustomers += customers[i].toString() + "\n";
+			
+			outCustomers += customers[i].toString() +  " " + createHashCode(String.valueOf(customers[i].getCard().getNumber())) + "\n";
 		}
 		write.print(outCustomers);
 		
