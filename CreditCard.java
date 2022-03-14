@@ -10,5 +10,26 @@ public class CreditCard {
 		this.expDate = expDate;
 	}
 	
+	
+	public long getNumber() {
+		return number;
+	}
+
+	public void setNumber(long number) {
+		this.number = number;
+	}
+
+	public String getExpDate() {
+		return expDate;
+	}
+
+	public void setExpDate(String expDate) {
+		this.expDate = expDate;
+	}
+	
 	// add public setter/getter methods, and also the toString method
+	@Override
+	public String toString() {
+		return String.valueOf(number) + "\t" + expDate;
+	}
 }
